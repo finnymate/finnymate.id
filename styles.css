@@ -1,0 +1,315 @@
+:root {
+    --primary: #2a9dcb;
+    --secondary: #ffffff;
+    --light: #fbfcfc;
+    --dark: hsl(0, 0%, 0%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background: var(--light);
+    color: var(--dark);
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+header img {
+    height: 60px;
+}
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+nav a:hover {
+    color: var(--secondary);
+}
+.slider {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 0;
+}
+.slide-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    padding: 20px;
+}
+.slide-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    margin-bottom: 20px;
+}
+.slide-content p {
+    font-size: 1.2rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.slider-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.slider-nav button {
+    background: rgba(255,255,255,0.8);
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+.slider-nav button:hover {
+    background: rgba(255,255,255,1);
+}
+.dots {
+    display: flex;
+    gap: 10px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.dot.active {
+    background: rgba(255,255,255,1);
+}
+section {
+    padding: 60px 80px;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--primary);
+    color: white;
+    margin-top: 40px;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.contact-item {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+.contact-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.contact-item i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+.contact-item a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.contact-item a:hover {
+    color: var(--secondary);
+}
+
+/* Added styles to tidy images in cards and grids */
+.card img, .grid img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Futuristic About Section Styles */
+#about {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 80px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-intro, .about-services, .about-products, .about-why, .about-conclusion {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-intro:hover, .about-services:hover, .about-products:hover, .about-why:hover, .about-conclusion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.about-intro h3, .about-services h3, .about-products h3, .about-why h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-conclusion .tagline {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about-why ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-why li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(42, 157, 203, 0.2);
+    position: relative;
+    padding-left: 30px;
+}
+
+.about-why li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.about-why li:last-child {
+    border-bottom: none;
+}
+
+.about-intro p, .about-services p, .about-products p, .about-conclusion p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #about {
+        padding: 60px 20px;
+    }
+    .about-container {
+        gap: 20px;
+    }
+    .about-intro, .about-services, .about-products, .about-why, .about-conclusion {
+        padding: 20px;
+    }
+}
